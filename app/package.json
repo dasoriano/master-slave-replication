@@ -1,7 +1,7 @@
 {
     "name": "docker-mysql-master-slave",
     "version": "1.0.0",
-    "description": "Docker MySQL master-slave replication  ========================",
+    "description": "Docker MySQL master-slave replication",
     "main": "index.js",
     "type": "module",
     "scripts": {

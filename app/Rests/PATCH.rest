@@ -1,0 +1,33 @@
+#  ____   _   _   ____   _____   _____   ___  ___   ____   ____
+# |  __| | | | | | ___| |_   _| |  _  | |   \/   | | ___| | __ \
+# | |__  | |_| | |___ |   | |   | |_| | | |\  /| | | __|  |   _/
+# |____| |_____| |____|   |_|   |_____| |_| \/ |_| |____| |_|\_\
+#
+### specific customer
+PATCH http://localhost:3000/api/v1/customer
+
+{ "id": 25, "username": "", "password": "", "surname": "", "first_name": "", "email": "", "residence": "Ph 1 Blk 1 Lt 1", "baranggay_id": 1, "municipality_id": 1, "province_id": 1, "shop_name": "Coke Traders" }
+
+
+
+#  ____   ____   _____   ____    _   _   ____   _____
+# | __ \ | __ \ |  _  | |    \  | | | | |  __| |_   _|
+# |  __/ |   _/ | |_| | | |)  | | |_| | | |__    | |
+# |_|    |_|\_\ |_____| |____/  |_____| |____|   |_|
+#
+### specific seller, specific product
+PATCH http://localhost:3000/api/v1/product
+
+{ "id": 12, "seller_id": 9, "company_name": "Coca Cola Inc.", "brand_name": "Coke Solo", "description": "Share with self.", "variation": "8 ounce", "price": 10, "stock": 10 }
+
+
+
+#  ____    ___    ____   _____
+# |  __|  / _ \  | __ \ |_   _|
+# | |__  |  _  | |   _/   | |
+# |____| |_| |_| |_|\_\   |_|
+#
+### specific customer, specific cart
+PATCH http://localhost:3000/api/v1/cart
+
+{ "id": 1, "customer_id": 1, "quantity": 2 }

@@ -1,0 +1,85 @@
+version: '3'
+services:
+  mysql_master:
+    image: mariadb:10.3
+    env_file:
+      - ./master/mysql_master.env
+    container_name: "mysql_master"
+    restart: "no"
+    ports:
+      - 4406:3306
+    volumes:
+      - ./master/conf/mysql.conf.cnf:/etc/mysql/conf.d/mysql.conf.cnf
+      - ./master/data:/var/lib/mysql
+      - ./db:/db
+    networks:
+      - overlay
+
+  mysql_slave1:
+    image: mariadb:10.3
+    env_file:
+      - ./slave1/mysql_slave.env
+    container_name: "mysql_slave1"
+    restart: "no"
+    ports:
+      - 5506:3306
+    depends_on:
+      - mysql_master
+    volumes:
+      - ./slave1/conf/mysql.conf.cnf:/etc/mysql/conf.d/mysql.conf.cnf
+      - ./slave1/data:/var/lib/mysql
+      - ./db:/db
+    networks:
+      - overlay
+
+  mysql_slave2:
+    image: mariadb:10.3
+    env_file:
+      - ./slave2/mysql_slave.env
+    container_name: "mysql_slave2"
+    restart: "no"
+    ports:
+      - 6606:3306
+    depends_on:
+      - mysql_master
+    volumes:
+      - ./slave2/conf/mysql.conf.cnf:/etc/mysql/conf.d/mysql.conf.cnf
+      - ./slave2/data:/var/lib/mysql
+      - ./db:/db
+    networks:
+      - overlay
+
+  mysql_slave3:
+    image: mariadb:10.3
+    env_file:
+      - ./slave3/mysql_slave.env
+    container_name: "mysql_slave3"
+    restart: "no"
+    ports:
+      - 7706:3306
+    depends_on:
+      - mysql_master
+    volumes:
+      - ./slave3/conf/mysql.conf.cnf:/etc/mysql/conf.d/mysql.conf.cnf
+      - ./slave3/data:/var/lib/mysql
+      - ./db:/db
+    networks:
+      - overlay
+    
+  rest_api:
+    build: ./app/
+    container_name: "rest_api"
+    ports:
+      - 3000:3000
+    depends_on:
+      - mysql_master
+      - mysql_slave1
+      - mysql_slave2
+      - mysql_slave3
+    volumes:
+      - ./app:/application
+    networks:
+      - overlay
+
+networks:
+  overlay:

@@ -1,0 +1,13 @@
+FROM node:14-alpine
+
+RUN mkdir /application
+
+COPY . /application
+
+WORKDIR /application
+
+EXPOSE 3000
+
+RUN npm cache clean --force && npm install
+
+CMD ["node", "server.js"]

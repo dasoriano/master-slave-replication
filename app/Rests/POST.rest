@@ -1,0 +1,56 @@
+#  ____   _   _   ____   _____   _____   ___  ___   ____   ____
+# |  __| | | | | | ___| |_   _| |  _  | |   \/   | | ___| | __ \
+# | |__  | |_| | |___ |   | |   | |_| | | |\  /| | | __|  |   _/
+# |____| |_____| |____|   |_|   |_____| |_| \/ |_| |____| |_|\_\
+#
+### new customer
+POST http://localhost:3000/api/v1/customer
+
+{ "username": "DaleSoriano", "password": "soriano123", "surname": "Soriano","first_name": "Dale","email": "soriano.dale@gmail.com" }
+
+
+
+#  ____   ____   _____   ____    _   _   ____   _____
+# | __ \ | __ \ |  _  | |    \  | | | | |  __| |_   _|
+# |  __/ |   _/ | |_| | | |)  | | |_| | | |__    | |
+# |_|    |_|\_\ |_____| |____/  |_____| |____|   |_|
+#
+### new product
+POST http://localhost:3000/api/v1/product
+
+{ "seller_id": 12, "company_name": "Coca Cola Company", "brand_name": "Coke Kasalo", "description": "Mas masarap kapag may kasalo ka.", "variation": "8ounce", "price": 18, "stock": 10 }
+
+
+
+#  ____    ___    ____   _____
+# |  __|  / _ \  | __ \ |_   _|
+# | |__  |  _  | |   _/   | |
+# |____| |_| |_| |_|\_\   |_|
+#
+### new cart
+POST http://localhost:3000/api/v1/cart
+
+{ "customer_id": 9, "product_id": 14, "quantity": 2 }
+
+
+
+#  ___    ___    _____   ____   _   _
+# | _ \  / _ \  |_   _| |  __| | |_| |
+# | _ < |  _  |   | |   | |__  |  _  |
+# |___/ |_| |_|   |_|   |____| |_| |_|
+#
+### new batch
+POST http://localhost:3000/api/v1/batch
+
+{ "batch_order": 1, "cart_arrayId": [10, 11, 12] }
+
+
+#  _____   ____   ____    ____   ____
+# |  _  | | __ \ |    \  | ___| | __ \
+# | |_| | |   _/ | |)  | | __|  |   _/
+# |_____| |_|\_\ |____/  |____| |_|\_\
+#
+### new order
+POST http://localhost:3000/api/v1/order
+
+{ "buyer_id": 9, "product_id": 13, "quantity": 3 }

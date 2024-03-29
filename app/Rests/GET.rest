@@ -1,0 +1,99 @@
+#  ____   _   _   ____   _____   _____   ___  ___   ____   ____
+# |  __| | | | | | ___| |_   _| |  _  | |   \/   | | ___| | __ \
+# | |__  | |_| | |___ |   | |   | |_| | | |\  /| | | __|  |   _/
+# |____| |_____| |____|   |_|   |_____| |_| \/ |_| |____| |_|\_\
+#
+### all customers
+GET http://localhost:3000/api/v1/customer
+
+### specific customer
+GET http://localhost:3000/api/v1/customer?id=25
+
+
+
+#  ____   ____   _____   ____    _   _   ____   _____
+# | __ \ | __ \ |  _  | |    \  | | | | |  __| |_   _|
+# |  __/ |   _/ | |_| | | |)  | | |_| | | |__    | |
+# |_|    |_|\_\ |_____| |____/  |_____| |____|   |_|
+#
+### all products
+GET http://localhost:3000/api/v1/product
+
+### specific product
+GET http://localhost:3000/api/v1/product?id=1
+
+### specific seller, all products
+GET http://localhost:3000/api/v1/product?seller-id=12
+
+### specific seller, specific product
+GET http://localhost:3000/api/v1/product?id=1&seller-id=1
+
+
+
+#  ____    ___    ____   _____
+# |  __|  / _ \  | __ \ |_   _|
+# | |__  |  _  | |   _/   | |
+# |____| |_| |_| |_|\_\   |_|
+#
+### all carts
+GET http://localhost:3000/api/v1/cart
+
+### specific cart
+GET http://localhost:3000/api/v1/cart?id=1
+
+### specific customer, all carts
+GET http://localhost:3000/api/v1/cart?customer-id=1
+
+### specific customer, specific cart
+GET http://localhost:3000/api/v1/cart?id=1&customer-id=1
+
+
+
+#  ___    ___    _____   ____   _   _
+# | _ \  / _ \  |_   _| |  __| | |_| |
+# | _ < |  _  |   | |   | |__  |  _  |
+# |___/ |_| |_|   |_|   |____| |_| |_|
+#
+### all batches
+GET http://localhost:3000/api/v1/batch
+
+### specific batch
+GET http://localhost:3000/api/v1/batch?id=1
+
+
+
+#  _____   ____   ____    ____   ____
+# |  _  | | __ \ |    \  | ___| | __ \
+# | |_| | |   _/ | |)  | | __|  |   _/
+# |_____| |_|\_\ |____/  |____| |_|\_\
+#
+### all orders
+GET http://localhost:3000/api/v1/order
+
+### specific order
+GET http://localhost:3000/api/v1/order?id=1
+
+### specific buyer, all orders
+GET http://localhost:3000/api/v1/order?buyer-id=1
+
+### specific buyer, specific order
+GET http://localhost:3000/api/v1/order?id=1&buyer-id=1
+
+
+
+#  _____   ____    ___    __  _   ____    ___    ____   _____   _   _____   __  _
+# |_   _| | __ \  / _ \  |  \| | | ___|  / _ \  |  __| |_   _| | | |  _  | |  \| |
+#   | |   |   _/ |  _  | |     | |___ | |  _  | | |__    | |   | | | |_| | |     |
+#   |_|   |_|\_\ |_| |_| |_|\__| |____| |_| |_| |____|   |_|   |_| |_____| |_|\__|
+#
+### all transactions 
+GET http://localhost:3000/api/v1/transaction
+
+### specific transaction
+GET http://localhost:3000/api/v1/transaction?id=1
+
+### specific buyer/seller, all transactions
+GET http://localhost:3000/api/v1/transaction?customer-id=1
+
+### specific buyer/seller, specific transaction
+GET http://localhost:3000/api/v1/transaction?id=1&customer-id=1
